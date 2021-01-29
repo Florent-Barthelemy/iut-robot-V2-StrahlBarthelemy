@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{77BA3446-D26C-476A-B681-2CB737E25161}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>robotConsole</RootNamespace>
+    <AssemblyName>robotConsole</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventArgsLibrary\EventArgsLibrary.csproj">
+      <Project>{66d75621-8432-4d1a-b26b-51a9ca3a3c00}</Project>
+      <Name>EventArgsLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\Constants\Constants.csproj">
+      <Project>{0540b497-b2ce-40a1-84b5-3109ce2f3146}</Project>
+      <Name>Constants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\MessageDecoder\MessageDecoder.csproj">
+      <Project>{4603885f-cc5e-43e5-a4af-063030cb0a32}</Project>
+      <Name>MessageDecoder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\MessageEncoder\MessageEncoder.csproj">
+      <Project>{efafba95-1787-41a9-8f12-14ecd9fe127a}</Project>
+      <Name>MessageEncoder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\MessageGenerator\MessageGenerator.csproj">
+      <Project>{a31f4a19-f674-4776-b597-e92ba3e5061e}</Project>
+      <Name>MessageGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\MessageProcessor\MessageProcessor.csproj">
+      <Project>{ad4884ad-631b-42e4-b6bb-f86b16bd6a68}</Project>
+      <Name>MessageProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\MessageSender\MessageSender.csproj">
+      <Project>{46ddc64d-a209-48cc-a154-af0f72d6e9d6}</Project>
+      <Name>MessageSender</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\USBVendor\USBVendor.csproj">
+      <Project>{12565644-3bf5-4bcb-84e5-6bda7d16293c}</Project>
+      <Name>USBVendor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\Utilities\Utilities.csproj">
+      <Project>{8e7d0da4-9a13-4b18-a90e-0243bbcce40a}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
